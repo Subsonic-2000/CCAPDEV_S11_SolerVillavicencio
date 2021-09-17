@@ -54,6 +54,7 @@ const app = express();
 
 const PORT = process.env.PORT || 9005;
 
+//for running locally place the following database after mongoose.connect(_________)
 //mongodb://127.0.0.1:27017
 
 //db 
