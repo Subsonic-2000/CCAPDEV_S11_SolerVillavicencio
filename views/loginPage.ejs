@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    
+
+    <div class="login-bg">
+        <div class="login-form-container">
+            <div class="login-title-center">
+                <h1>Login</h1>         
+            </div>
+            <hr style="height:2px;border-width:0;color:rgb(54, 54, 54);background-color:gray;margin: 30px 0 40px 0;">
+            <%- include('./partials/messages.ejs') %>
+            <form action="" class="form" id="form" method="POST">
+                <div class="form-input">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Enter username" id="username" name="username" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Invalid username</small>
+                </div>
+
+                <div class="form-input">
+                    <label for="username">Password</label>
+                    <input type="password" placeholder="Enter password" id="password" name="password" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Invalid password</small>
+                </div>
+                <button class="submit-form">Sign In</button>
+                <div class="form-redirect">
+                    <span>Dont have an account yet? </span>
+                    <a href="/register">Sign Up</a>
+                </div>
+                
+                
+            </form>
+            
+        </div>
+    </div>
+    
+    
+</body>
+</html>

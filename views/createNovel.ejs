@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+    
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+    <div class="create-novel-bg">
+        <div class="novel-form-container">
+            <h1>Create a fanfiction</h1>
+            <form action="/create" class="novel-form" id="novel-form" method="POST" enctype="multipart/form-data">
+                <div class="novel-form-input">
+
+                    <label for  ="title">Story title</label>
+                    <input type="text" placeholder="Enter title"  id="title" name="title"  required>
+
+                </div>
+
+            
+                <div style="width: 300px; margin-top: 20px;" >
+                    <label for="cover_image">Story Thumbnail</label>
+                    <input type="file" id="cover_image" name="cover_image"  required>
+                </div>
+
+   
+                <div class="novel-form-input">
+
+                    <label for="genre">Story Genre</label>
+                    <select name="genre" id="genre" name="genre" required>
+                        <option value="Action">Action</option>
+                        <option value="Fantasy">Fantasy</option>
+                        <option value="Horror & Mystery">Horror & Mystery</option>           
+                        <option value="Romance">Romance</option>
+                        <option value="Comedy">Comedy</option>
+                        <option value="Slice of life">Slice of life</option>
+                    </select>
+
+                </div>
+
+                <div class="novel-form-input">
+
+                    <label for="content">Story Content</label>
+                    <textarea  cols="30" rows="10" class="content" name="content" id="content" required></textarea>
+
+                </div>
+
+                
+
+                <button class="submit-form" style="width: 300px;">Create Story</button>
+
+                
+                
+            </form>
+         </div>
+
+    </div>
+
+    
+
+        
+    
+
+<%- include('./partials/footer.ejs') %>
+<script src="scripts/genrePage.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <div class="search-bg">
+    <div class="search-box"> 
+    <table class="elementsContainer">
+        <form action="/search" method="GET">
+
+            <tr>
+                <td>
+                    <input type="text" class="search-txt" name="search"  placeholder="Story Search">
+                </td>
+                <td>
+                    <button class="search-btn"  value="search" type="submit">
+                        <i class="fa fa-search" aria-hidden="true"></i>
+                    </button>
+                </td>
+            </tr>
+        </form>
+        
+    </table>
+    
+</div>
+<h1 style="margin-left: 50px;">Search Results</h1>
+<div style="display: flex; align-items: center; justify-content: center;">
+    
+    <div class="card-container" style="margin-top: 30px">
+        <% novels.forEach(novel=>{ %>
+
+            <div class="novel-card">
+                <img src="/uploads/<%= novel.cover_pic%>">
+                <p><%= novel.title %></p>
+                
+                <div class="novel-genre">
+                    <%= novel.genre %>
+                </div>
+                <a href="/novel/<%= novel._id%>">Read Now</a>
+                
+            </div>
+           
+            <% }) %>
+        
+        
+    </div>
+</div>
+
+
+</div>
+    <%- include('./partials/footer.ejs') %>
+
+    <script src="scripts/genrePage.js"></script>
+    
+</body>
+</html>

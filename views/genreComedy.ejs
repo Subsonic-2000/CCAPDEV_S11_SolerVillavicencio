@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+    <%- include('./partials/navbarGenre.ejs') %>
+    <div class="genre-bg">
+
+        <div class="card-container">
+            
+
+            
+            <% novels.forEach(novel=>{ %>
+
+                <div class="novel-card">
+                    <img src="/uploads/<%= novel.cover_pic%>">
+                    <p><%= novel.title %></p>
+                    
+                    <div class="novel-genre">
+                        <%= novel.genre %>
+                    </div>
+                    <a href="/novel/<%= novel._id%>">Read Now</a>
+                    
+                </div>
+               
+                <% }) %>
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs') %>
+
+    <script src="scripts/genrePage.js"></script>
+    
+</body>
+</html>

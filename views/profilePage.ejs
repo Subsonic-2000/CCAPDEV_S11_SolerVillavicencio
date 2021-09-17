@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+<div class="profile-bg">
+        
+    <div class="content">
+        <div class = "avatar">
+            <img src="https://fakeimg.pl/200x200/009578/fff/" alt="face">
+        </div>
+        <div class="userData">
+            <h1>Welcome <%= user.username %></h1>
+            <p>ID:<%= user.id %></p>
+            <p><i class="far fa-calendar-alt"></i> Joined Apr 19th 2021</p>
+        </div>
+    </div>
+    
+    <div class="secondContainer">
+        
+    
+    </div>
+    <div class="box-container">
+        <h1 style="margin-bottom: 30px;">Novels Authored</h1>
+        
+        <div class="profile-card-container">
+
+            <% novels.forEach(novel=>{ %>
+
+                <div class="novel-card" style="margin-bottom: 10px;">
+                    <img src="/uploads/<%= novel.cover_pic%>">
+                    <p><%= novel.title %></p>
+                    
+                    <div class="novel-genre">
+                        <%= novel.genre %>
+                    </div>
+                    <a href="/novelauth/<%= novel._id%>">Read Now</a>
+                    
+                </div>
+               
+                <% }) %>
+
+        </div>
+    </div>
+</div>
+    <%- include('./partials/footer.ejs') %>
+
+    <script src="scripts/genrePage.js"></script>
+    
+</body>
+</html>

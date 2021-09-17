@@ -1,0 +1,34 @@
+<div class="nav-container">
+    <nav class="nav-bar">
+        <div class="nav-right">
+            <i style ="color: var(--darkblue);   line-height:50px;
+            font-size: 30px; margin-left: 20px"class="fa fa-book"></i>
+            <h1 class="" id="nav-title">QuickFic! </h1>
+            <a class="nav-links"href="/">Home</a>
+            <a class="nav-links"href="/browse">Browse</a>
+            
+        </div>
+        <div class="nav-left">
+            
+            <a href="search" style ="font-size: 20px;"class="fa-stack fa-4x nav-search">
+                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                <i style ="color: white;" class="fas fa-search fa-stack-1x"></i>
+            </a>
+            <a href="/create" style ="font-size: 20px;"class="fa-stack fa-4x nav-write">
+                <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                <i style ="color: white;" class="fas fa-pencil-alt fa-stack-1x"></i>
+            </a>
+            <% if( isAuthenticated){ %>
+                
+                <a href="/profile" class="profile-link">
+                    <img  src="img/default_profile.jpg" alt="">
+                </a>
+                <a class="nav-link-btn" href="/logout">Sign out</a>
+            <% } else{ %>  
+                <a class="nav-link-btn" href="/login">Sign in</a>
+            <% } %>
+            
+            
+        </div>
+    </nav>
+</div>

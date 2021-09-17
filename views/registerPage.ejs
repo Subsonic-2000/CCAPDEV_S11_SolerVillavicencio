@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    
+    
+    <div class="login-bg">
+        <div class="register-form-container">
+            <div class="login-title-center">
+                <h1>Register</h1>         
+            </div>
+            <hr style="height:2px;border-width:0;color:rgb(54, 54, 54);background-color:gray;margin: 30px 0 40px 0;">
+            <%- include('./partials/messages.ejs') %>
+            <form action="/register" class="form" id="form" method="POST">
+                <div class="form-input">
+                    <label for="username">Username</label>
+                    <input type="text" placeholder="Enter username" id="username" name="username" value="<%= typeof username != 'undefined' ? username : '' %>" />
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Invalid username</small>
+                </div>
+
+                <div class="form-input">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Enter password" id="password" name="password" value="<%= typeof password != 'undefined' ? password : '' %>"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Invalid password</small>
+                </div>
+
+                <div class="form-input">
+                    <label for="password">Password</label>
+                    <input type="password" placeholder="Confirm password" id="confirm-password" name="password2" value="<%= typeof password2 != 'undefined' ? password2 : '' %>"/>
+                    <i class="fas fa-check-circle"></i>
+                    <i class="fas fa-exclamation-circle"></i>
+                    <small>Invalid password</small>
+                </div>
+                <button class="submit-form">Sign Up</button>
+                <div class="form-redirect">
+                    <span>Already have an account? </span>
+                    <a href="/login">Sign in</a>
+                </div>
+                
+                
+            </form>
+        </div>
+    </div>
+    
+
+    
+
+    <script src="scripts/registerPage.js"></script>
+    
+</body>
+</html>

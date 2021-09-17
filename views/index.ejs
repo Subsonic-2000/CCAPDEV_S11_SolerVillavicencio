@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<%- include('./partials/head.ejs') %>
+<body>
+    <%- include('./partials/navbar.ejs') %>
+
+    
+    <section class="container-light">
+        
+
+        <div class="home-novels-light">
+
+            <h1 class="welcome-text" style = "margin-bottom: 30px;">Welcome To QuickFic!</h1>
+            <p style = "text-align: center;">Hello and welcome to QuickFic!<br>
+                Explore our website and discover the multiple genres of fanfictions created by other users.<br>
+                Get involved! Get those creative juices flowing and post your own fics as well!<br>
+                Whether you're reading or writing we hope you enjoy your experience on QuickFic! :)
+            </p>
+                
+  
+        </div>
+
+    </section>
+    <section class="container-dark">
+
+        <div class="home-novels-dark">
+
+            <h1>New Arrivals</h1>
+
+            <div class="home-novels-container">
+
+                <% novels3.forEach(novel=>{ %>
+
+                    <div class="novel-card" style="margin-left: 45px">
+                        <img src="/uploads/<%= novel.cover_pic%>">
+                        <p><%= novel.title %></p>
+                        
+                        <div class="novel-genre">
+                            <%= novel.genre %>
+                        </div>
+                        <a href="/novel/<%= novel._id%>">Read Now</a>
+                        
+                    </div>
+                   
+                    <% }) %>
+
+
+            </div>
+
+        </div>
+        
+
+    </section>
+
+
+    <footer class= "nav-footer-home">
+        <div class="nav-footer">
+            <div class="footer-logo">
+                <div style="display: flex;">
+                    <i style ="color: var(--darkblue); font-size: 25px;"class="fa fa-book"></i>
+                    <h2 class="" id="nav-footer-title">QuickFic! </h2>
+                </div>
+                
+                
+                </h1>
+            </div>
+            <nav>
+            </nav>
+            <div class="footer-socials-home">
+                <a href="#"><i class="fab fa-facebook fa-2x"></i></a>
+                <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
+            </div>
+    
+        </div>
+    
+    </footer>
+    
+</body>
+</html>
